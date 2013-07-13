@@ -1,9 +1,9 @@
 jarfile=/opt/cloudera/parcels/CDH-4.3.0-1.cdh4.3.0.p0.22/lib/hadoop-0.20-mapreduce/hadoop-examples.jar
 
 #blockcount=500000x100byte (50MB)
-#blockcount=500000
+blockcount=500000
 # 1GB
-blockcount=10000000
+#blockcount=10000000
 # 5GB
 #blockcount=50000000
 # 10GB

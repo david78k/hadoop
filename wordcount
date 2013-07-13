@@ -6,13 +6,9 @@ inputfile=/opt/cloudera/parcels/CDH-4.3.0-1.cdh4.3.0.p0.22/share/doc/hadoop-2.0.
 blockcount=500000
 # 1GB
 #blockcount=10000000
-# 5GB
-#blockcount=50000000
-# 10GB
-#blockcount=100000000
 
 #hadoop fs -mkdir wordcount-input
-hadoop fs -put $inputfile wordcount-input
+#hadoop fs -put $inputfile wordcount-input
 
 hadoop fs -rm -r wordcount-output
 hadoop jar $jarfile wordcount wordcount-input wordcount-output 
