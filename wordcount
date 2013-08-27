@@ -3,11 +3,6 @@ inputfile=LICENSE.txt
 
 hadoopcmd=bin/hadoop
 
-#blockcount=500000x100byte (50MB)
-blockcount=500000
-# 1GB
-#blockcount=10000000
-
 mkdir wordcount-input
 cp $inputfile wordcount-input
 
