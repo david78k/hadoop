@@ -1,6 +1,0 @@
-out=randomwriter-out
-
-#rm -rf $out
-#rm -rf $out
-bin/hadoop jar examples.jar randomwriter $out
-

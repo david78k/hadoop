@@ -1,2 +1,0 @@
-#sudo -u hdfs hdfs dfsadmin -report
-hdfs dfsadmin -report
