@@ -2,7 +2,7 @@ hadoopcmd=bin/hadoop
 
 $hadoopcmd namenode -format
 
-jps
-
 bin/start-all.sh
+
+jps
 
