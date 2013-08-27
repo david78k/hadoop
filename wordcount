@@ -1,17 +1,16 @@
-#jarfile=/usr/lib/hadoop/hadoop-*-examples.jar 
-jarfile=/opt/cloudera/parcels/CDH-4.3.0-1.cdh4.3.0.p0.22/lib/hadoop-0.20-mapreduce/hadoop-examples.jar
-inputfile=/opt/cloudera/parcels/CDH-4.3.0-1.cdh4.3.0.p0.22/share/doc/hadoop-2.0.0+1357/hadoop/common/LICENSE.txt
+jarfile=examples.jar
+inputfile=LICENSE.txt
 
-#blockcount=500000x100byte (50MB)
-blockcount=500000
-# 1GB
-#blockcount=10000000
+hadoopcmd=bin/hadoop
 
-#hadoop fs -mkdir wordcount-input
-#hadoop fs -put $inputfile wordcount-input
+#mkdir wordcount-input
+#cp $inputfile wordcount-input
 
-hadoop fs -rm -r wordcount-output
-hadoop jar $jarfile wordcount wordcount-input wordcount-output 
-hadoop fs -cat wordcount-output/part-* | head
+$hadoopcmd fs -mkdir wordcount-input
+$hadoopcmd fs -put $inputfile wordcount-input
 
-#hadoop job -history all tera-output
+$hadoopcmd fs -rmr wordcount-output
+#rm -rf wordcount-output
+$hadoopcmd jar $jarfile wordcount wordcount-input wordcount-output 
+$hadoopcmd fs -cat wordcount-output/part-* | head
+#cat wordcount-output/part-* | head
