@@ -1,0 +1,16 @@
+jarfile=examples.jar
+inputfile=LICENSE.txt
+
+hadoopcmd=bin/hadoop
+
+#mkdir wordcount-input
+#cp $inputfile wordcount-input
+
+$hadoopcmd fs -mkdir wordcount-input
+$hadoopcmd fs -put $inputfile wordcount-input
+
+$hadoopcmd fs -rmr wordcount-output
+#rm -rf wordcount-output
+$hadoopcmd jar $jarfile wordcount wordcount-input wordcount-output 
+$hadoopcmd fs -cat wordcount-output/part-* | head
+#cat wordcount-output/part-* | head
