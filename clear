@@ -1,0 +1,8 @@
+# clean up hadoop related processes and files
+
+bin/stop-all.sh
+# pgrep java
+
+rm -rf /tmp/hadoop*
+rm -rf logs
+
